@@ -53,7 +53,9 @@ class MyApp extends StatelessWidget {
           iconSize: 20.0,
           type: BottomNavigationBarType.fixed,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'
+            ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.people_outline), label: 'Community'),
             BottomNavigationBarItem(
@@ -78,73 +80,6 @@ var topLeft = Row(children: [
   Icon(Icons.keyboard_arrow_down_outlined, color: Colors.black, size: 30),
 ]);
 
-//Basic List View
-class BasicListView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      itemExtent: 100,
-      children: const <Widget>[
-        ListTile(
-          leading: SizedBox(
-            child: Image(
-                image: AssetImage("images/max.jpg"), fit: BoxFit.fitHeight),
-            height: 50,
-            width: 50,
-          ),
-          title: Text("JBL Max Speakers"),
-          subtitle: Text("역삼동 * 1분 전"),
-          trailing: Icon(CupertinoIcons.heart),
-        ),
-        ListTile(
-          leading: FittedBox(
-            child: Image(
-                image: AssetImage("images/gucci.jpg"), fit: BoxFit.fitHeight),
-          ),
-          title: Text('Channel Black Classic Phone Holder'),
-          subtitle: Text("Gangnam Nonhyeonddong * 57 seconds ago"),
-          trailing: Icon(CupertinoIcons.heart),
-        ),
-        ListTile(
-          leading: FittedBox(
-            child: Image(
-                image: AssetImage("images/max.jpg"),
-                width: 250,
-                height: 250,
-                fit: BoxFit.fill),
-          ),
-          title: Text('Channel Black Classic Phone Holder'),
-          subtitle: Text("Gangnam Nonhyeonddong * 57 seconds ago"),
-          trailing: Icon(CupertinoIcons.heart),
-        ),
-        ListTile(
-          leading: FittedBox(
-            child: Image(
-                image: AssetImage("images/max.jpg"),
-                width: 50,
-                height: 50,
-                fit: BoxFit.fill),
-          ),
-          title: Text('Channel Black Classic Phone Holder'),
-          subtitle: Text("Gangnam Nonhyeonddong * 57 seconds ago"),
-          trailing: Icon(CupertinoIcons.heart),
-        ),
-        ListTile(
-          leading: FittedBox(
-            child: Image(
-                image: AssetImage("images/max.jpg"),
-                width: 50,
-                height: 50,
-                fit: BoxFit.fill),
-          ),
-          title: Text('Channel Black Classic Phone Holder'),
-          subtitle: Text("Gangnam Nonhyeonddong * 57 seconds ago"),
-          trailing: Icon(CupertinoIcons.heart),
-        ),
-      ],
-    );
-  }
-}
 
 //these two must match in length
 final List<String> ItemTitleEntries = <String>[
@@ -159,8 +94,11 @@ final List<String> ItemLocationEntries = <String>[
   'Daerim * 1 Minutes Ago',
   'Haengdang Apt.'
 ];
-final List<String> ItemPriceEntries = <String>['\$80', '\$ 1050', '\$ 100', '\$ 300'];
-List<Image> assetImages = <Image>[Image.asset("images/max.jpg"), Image.asset("images/Channelphoneholder.jpg"), Image.asset('images/airpods.jpeg'), Image.asset("images/gucci.jpg")];
+final List<String> ItemPriceEntries = <String>[
+  '\$80', '\$ 1050', '\$ 100', '\$ 300'];
+
+List<Image> assetImages = <Image>[
+  Image.asset("images/max.jpg"), Image.asset("images/Channelphoneholder.jpg"), Image.asset('images/airpods.jpeg'), Image.asset("images/gucci.jpg")];
 
 class AdvancedListView extends StatelessWidget {
   @override
