@@ -29,11 +29,10 @@ class MyApp extends StatelessWidget {
                   print("Launch settings");
                 }),
             GestureDetector(
-                child: Icon(Icons.notifications_outlined,
-                    color: Colors.black, size: 30),
-                onTap: () {
-                  print("Launch notifications");
-                }),
+              child: Icon(Icons.notifications_outlined,
+                  color: Colors.black, size: 30),
+
+            ),
             Padding(
               padding: EdgeInsets.all(5),
             )
@@ -151,15 +150,17 @@ class BasicListView extends StatelessWidget {
 final List<String> ItemTitleEntries = <String>[
   'JBL SoundBar',
   'Channel Phone Holder',
-  'Airpod 3rd Generation'
+  'Airpod 3rd Generation',
+  'Gucci Flip Flops'
 ];
 final List<String> ItemLocationEntries = <String>[
   'Songdo * 5 Minutes Ago',
   'Gangnam * 57 Seconds Ago',
-  'Daerim * 1 Minutes Ago'
+  'Daerim * 1 Minutes Ago',
+  'Haengdang Apt.'
 ];
-final List<String> ItemPriceEntries = <String>['\$80', '\$ 1050', '\$ 100'];
-List<AssetImage> assetImages = <AssetImage>[AssetImage("images/gucci.jpg"), AssetImage("images/Channelphoneholder.jpg"), AssetImage('images/airpods.jpeg')];
+final List<String> ItemPriceEntries = <String>['\$80', '\$ 1050', '\$ 100', '\$ 300'];
+List<Image> assetImages = <Image>[Image.asset("images/max.jpg"), Image.asset("images/Channelphoneholder.jpg"), Image.asset('images/airpods.jpeg'), Image.asset("images/gucci.jpg")];
 
 class AdvancedListView extends StatelessWidget {
   @override
@@ -169,17 +170,19 @@ class AdvancedListView extends StatelessWidget {
         itemCount: ItemTitleEntries.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
+            height: 140,
               child: Row(
-
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  FittedBox(
-                    child: Image(image: AssetImage("images/max.jpg"), height: 50,),
-                    fit: BoxFit.fitHeight,
+                 assetImages[index],
+                  SizedBox(
+                    width: 20,
                   ),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                       children: [
                         Text(ItemTitleEntries[index], style: TextStyle(fontSize: 20)),
                         Text(ItemLocationEntries[index],
