@@ -98,7 +98,10 @@ final List<String> ItemPriceEntries = <String>[
   '\$80', '\$ 1050', '\$ 100', '\$ 300'];
 
 List<Image> assetImages = <Image>[
-  Image.asset("images/max.jpg"), Image.asset("images/Channelphoneholder.jpg"), Image.asset('images/airpods.jpeg'), Image.asset("images/gucci.jpg")];
+  Image.asset("images/max.jpg", fit: BoxFit.fitHeight), Image.asset("images/Channelphoneholder.jpg"), Image.asset('images/airpods.jpeg'), Image.asset("images/gucci.jpg")];
+//only the first one needs to be boxfit.fill or BoxFit.fitHeight to make that perfect square.
+//others are all square images. I tried wrapping Container(BoxDecoration)) but image: attribute doesn't take a asset Image type.
+
 
 class AdvancedListView extends StatelessWidget {
   @override
@@ -110,9 +113,10 @@ class AdvancedListView extends StatelessWidget {
           return Container(
             height: 140,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                 assetImages[index],
+                 AspectRatio(
+                 aspectRatio: 1 / 1,
+                 child: assetImages[index]),
                   SizedBox(
                     width: 20,
                   ),
